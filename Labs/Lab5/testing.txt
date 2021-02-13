@@ -1,0 +1,1 @@
+abandon: ['To give up control of, to surrender.', 'To leave behind definitively or with serious consequences or risks.', 'To leave someone who needs or counts on you.']Testing
