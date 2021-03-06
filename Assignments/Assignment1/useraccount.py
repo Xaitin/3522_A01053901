@@ -1,5 +1,4 @@
 from transaction import Transaction
-from budget import Budget
 
 
 class UserAccount:
@@ -14,17 +13,6 @@ class UserAccount:
         self._budgets = list_budgets
         self._transactions = []
 
-    @classmethod
-    def load_test_user(cls):
-        n = "Bobby Joe"
-        a = 21
-        t = "The Angel"
-        a_num = 1101291
-        b_name = "RBC"
-        b_bal = 10000
-        test_budget = Budget.load_test_budget()
-        return UserAccount(n, a, t, a_num, b_name, b_bal, test_budget)
-
     # Amount, Category, Name of store
     def record_transaction(self, am, ty, na):
         self._bank_bal -= am
@@ -33,3 +21,4 @@ class UserAccount:
     def show_transactions(self):
         for x in self._transactions:
             print(x)
+
