@@ -104,8 +104,7 @@ class Catalogue:
         """
         print("Books List")
         print("--------------", end="\n\n")
-        for library_item in self._item_list:
-            print(library_item)
+        [print(x) for x in self._item_list]
 
     def reduce_item_count(self, call_number):
         """
