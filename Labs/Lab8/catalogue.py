@@ -64,9 +64,7 @@ class Catalogue:
         :param title: a string
         :return: a list of titles.
         """
-        title_list = []
-        for catalogue_item in self._item_list:
-            title_list.append(catalogue_item.get_title())
+        title_list = [x.get_title() for x in self._item_list]
         results = difflib.get_close_matches(title, title_list,
                                             cutoff=0.5)
         return results
