@@ -1,4 +1,4 @@
-from libraryitemgenerator import LibraryItemGenerator
+from itemfactory import ItemFactory
 import difflib
 
 
@@ -11,7 +11,7 @@ class Catalogue:
         """
         Catalogue initializer.
         """
-        self._item_list = LibraryItemGenerator.generate_test_items()
+        self._item_list = ItemFactory.generate_test_items()
 
     def check_out(self, call_number):
         """
@@ -73,7 +73,7 @@ class Catalogue:
         """
         Add a brand new book to the library with a unique call number.
         """
-        new_book = LibraryItemGenerator.create_item()
+        new_book = ItemFactory.create_item()
         found_book = self._retrieve_item_by_call_number(
             new_book.call_number)
         if found_book:

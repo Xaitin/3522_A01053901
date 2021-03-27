@@ -21,14 +21,6 @@ class Book(Item):
         self._title = title
         self._author = author
 
-    @staticmethod
-    def create_item():
-        n_call_num = input("Enter book call number:")
-        n_copies = input("Enter number of copies to create:")
-        n_title = input("Enter the book title:")
-        n_author = input("Enter the author:")
-        return Book(n_call_num, n_copies, n_title, n_author)
-
     def get_author(self):
         return self._author
 

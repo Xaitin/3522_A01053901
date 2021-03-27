@@ -10,15 +10,6 @@ class Dvd(Item):
         self._release = release_date
         self._region_code = region_code
 
-    @staticmethod
-    def create_item():
-        n_call_num = input("Enter dvd call number:")
-        n_copies = input("Enter number of copies to create:")
-        n_title = input("Enter the dvd title:")
-        n_release_date = input("Enter the release date:")
-        n_region_code = input("Enter the region code:")
-        return Dvd(n_call_num, n_copies, n_title, n_release_date, n_region_code)
-
     def get_release_date(self):
         return self._release
 

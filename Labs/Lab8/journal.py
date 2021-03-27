@@ -12,15 +12,6 @@ class Journal(Item):
         self._issue_num = issue_num
         self._publisher = publisher
 
-    @staticmethod
-    def create_item():
-        n_call_num = input("Enter journal call number:")
-        n_copies = input("Enter number of copies to create:")
-        n_title = input("Enter the journal title:")
-        n_issue_num = input("Enter the issue number:")
-        n_publisher = input("Enter the publisher:")
-        return Journal(n_call_num, n_copies, n_title, n_issue_num, n_publisher)
-
     def get_issue_num(self):
         return self._issue_num
 

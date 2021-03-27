@@ -4,7 +4,7 @@ from journal import Journal
 from dvd import Dvd
 
 
-class LibraryItemGenerator:
+class ItemFactory:
 
     @staticmethod
     def create_item():
@@ -12,12 +12,20 @@ class LibraryItemGenerator:
         item_type = input("The supported items are: {0} Which would you like to create?".format(item_types))
         item_type = item_type.lower()
         if item_type in (string.lower() for string in item_types):
+            n_call_num = input("Enter book call number:")
+            n_copies = input("Enter number of copies to create:")
+            n_title = input("Enter the book title:")
             if item_type == "book":
-                return Book.create_item()
+                n_author = input("Enter the author:")
+                return Book(n_call_num, n_copies, n_title, n_author)
             elif item_type == "dvd":
-                return Dvd.create_item()
+                n_release_date = input("Enter the release date:")
+                n_region_code = input("Enter the region code:")
+                return Dvd(n_call_num, n_copies, n_title, n_release_date, n_region_code)
             elif item_type == "journal":
-                return Journal.create_item()
+                n_issue_num = input("Enter the issue number:")
+                n_publisher = input("Enter the publisher:")
+                return Journal(n_call_num, n_copies, n_title, n_issue_num, n_publisher)
         else:
             print("Invalid item type")
 
