@@ -73,7 +73,8 @@ class Catalogue:
         """
         Add a brand new book to the library with a unique call number.
         """
-        new_book = ItemFactory.create_item()
+        item_factory = ItemFactory()
+        new_book = item_factory.create_item()
         found_book = self._retrieve_item_by_call_number(
             new_book.call_number)
         if found_book:

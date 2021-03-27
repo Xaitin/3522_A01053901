@@ -6,9 +6,11 @@ from dvd import Dvd
 
 class ItemFactory:
 
-    @staticmethod
-    def create_item():
-        item_types = [cls.__name__ for cls in Item.__subclasses__()]
+    def __init__(self):
+        self._item_types = [cls.__name__ for cls in Item.__subclasses__()]
+
+    def create_item(self):
+        item_types = self._item_types
         item_type = input("The supported items are: {0} Which would you like to create?".format(item_types))
         item_type = item_type.lower()
         if item_type in (string.lower() for string in item_types):
